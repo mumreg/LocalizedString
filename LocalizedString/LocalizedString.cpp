@@ -25,18 +25,8 @@ LocalizedString* LocalizedString::sharedInstance() {
 }
 
 LocalizedString::LocalizedString() {
-    string lang = string("en");
-    
-    int langNum = (int)CCApplication::sharedApplication()->getCurrentLanguage();
-    
-    const char *langSuffix[] = {LANG_SUFFIX};
-    const int supportedLangs[] = {SUPPORTED_LANGS};
-    
-    if (supportedLangs[langNum] != 0) {
-        lang = string(langSuffix[langNum]);
-    }
-    
-    CCUserDefault::sharedUserDefault()->setStringForKey("lang", lang);
+    setLanguage();
+    string lang = CCUserDefault::sharedUserDefault()->getStringForKey("lang");
     
     string fileName = string(LOCALIZATION_FILE_PREFFIX) + string("_") + lang + string(".xml");
     
