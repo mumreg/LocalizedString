@@ -1,6 +1,5 @@
 //
 //  Text.h
-//  Dilemma
 //
 //  Created by Mikhail Perekhodtsev on 02.04.13.
 //
